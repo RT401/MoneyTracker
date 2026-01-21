@@ -28,3 +28,17 @@ def needs_Spent(val):
 def wants_Spent(val):
     Add_Val(5, val)
     
+#####
+## Function to reset the spends on week changes
+def set_Payday(date):
+    # setup live date functionality
+    return
+
+def update_week():
+    weekly_Spent.clear
+
+def update_Month():
+    monthly_Spent.clear
+
+def update_Year():
+    yearly_Spent.clear
