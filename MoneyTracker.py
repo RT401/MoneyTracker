@@ -42,3 +42,21 @@ def update_Month():
 
 def update_Year():
     yearly_Spent.clear
+
+
+#####
+## Main loop
+
+class main:
+    ## check for load
+
+    ## setup loop
+        ## Display functions
+
+        ## ask for input
+
+        ## validate input
+
+        ## run functionality
+    
+    ## if quit save then quit
