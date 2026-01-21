@@ -1,6 +1,7 @@
 #####
 ## Saving requirements
 import json
+import os
 fileName = "MoneyTracker.txt"
 
 #####
@@ -85,8 +86,11 @@ def load():
 
 class main:
     ## check for load
+    load()
 
     ## setup loop
+    main_Loop = True
+    if(main_Loop == True):
         ## Display functions
 
         ## ask for input
@@ -94,5 +98,8 @@ class main:
         ## validate input
 
         ## run functionality
+        main_Loop = False
     
     ## if quit save then quit
+    save()
+    quit()
