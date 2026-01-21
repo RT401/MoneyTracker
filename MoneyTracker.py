@@ -1,4 +1,10 @@
-# Value trackers [total_spent, income, fuel, food, needs, wants]
+#####
+## Saving requirements
+import json
+fileName = "MoneyTracker.txt"
+
+#####
+## Value trackers [total_spent, income, fuel, food, needs, wants]
 weekly_Spent = []
 monthly_Spent = []
 yearly_Spent = []
@@ -43,6 +49,36 @@ def update_Month():
 def update_Year():
     yearly_Spent.clear
 
+
+#####
+## Save and load functionality
+def save():
+    data = {
+        "weekly_Spent": weekly_Spent,
+        "monthly_Spent": monthly_Spent,
+        "yearly_Spent": yearly_Spent
+    }
+    
+    if not os.path.exists(fileName):
+        # Create the file
+        with open(fileName, "w") as file:
+            json.dump(data, file)
+        print(f"File '{fileName}' created and saved.")
+    else:
+        # Overwrite existing file
+        with open(fileName, "w") as file:
+            json.dump(data, file)
+        print(f"File '{fileName}' updated.")
+
+def load():
+    with open(fileName, "r") as file:
+        data = json.load(file)
+
+    return(
+        data.get("weekly_Spent", []),
+        data.get("monthly_Spent", []),
+        data.get("yearly_Spent", [])
+    )
 
 #####
 ## Main loop
